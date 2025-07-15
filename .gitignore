@@ -10,6 +10,7 @@
 /node_modules
 npm-debug.log
 yarn-error.log
+yarn-debug.log*
 
 # IDEs and editors
 .idea/
@@ -22,17 +23,25 @@ yarn-error.log
 
 # Visual Studio Code
 .vscode/*
+.vscode-insiders/*
 .history/*
 
 # Miscellaneous
 /.angular/cache
+.cache/
 .sass-cache/
 /connect.lock
 /coverage
 /libpeerconnection.log
 testem.log
 /typings
+test-results.xml
 
 # System files
 .DS_Store
 Thumbs.db
+
+# Archivos de configuración locales
+*.env
+.env.local
+*.log
