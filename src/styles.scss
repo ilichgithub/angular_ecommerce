@@ -1,1 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+    --primary-color: #6A1B9A; /* Morado Profundo */
+    --secondary-color: #9C27B0; /* Morado Vibrante */
+    --background-color: #F8F9FA; /* Blanco muy suave para el fondo general */
+    --card-background: #FFFFFF; /* Blanco puro para la tarjeta de login */
+    --text-color: #333;
+    --placeholder-color: #aaa;
+    --border-color: #ddd;
+    --hover-color: #5B008A; /* Morado oscuro para el hover del botón */
+    --focus-glow: 0 0 0 0.2rem rgba(156, 39, 176, 0.25); /* Ajustar el glow al nuevo secondary-color */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    //align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow: hidden; /* Para las animaciones de fondo */
+}
+/* Animación de fondo sutil */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    opacity: 0.1;
+    transform: scale(1.5) rotate(15deg);
+    animation: backgroundShift 20s infinite alternate;
+    z-index: -1;
+}
+
+
+@keyframes backgroundShift {
+    0% { transform: scale(1.5) rotate(15deg); }
+    50% { transform: scale(1.6) rotate(18deg); }
+    100% { transform: scale(1.5) rotate(15deg); }
+}
+

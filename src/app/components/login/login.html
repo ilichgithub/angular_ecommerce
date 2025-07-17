@@ -1,0 +1,17 @@
+<div class="login-container">
+    <h2>Bienvenido</h2>
+    <form [formGroup]="credentialForm">
+        <div class="input-group">
+            <input type="text" id="username" formControlName="username" name="username" placeholder=" " required>
+            <label for="username">Nombre de usuario</label>
+        </div>
+        <div class="input-group">
+            <input type="password" id="password" formControlName="password" name="password" placeholder=" " required>
+            <label for="password">Contraseña</label>
+        </div>
+        <button type="button" (click)="onSubmit()" class="login-button">Iniciar Sesión</button>
+        <div class="forgot-password">
+            <a href="#">¿Olvidaste tu contraseña?</a>
+        </div>
+    </form>
+</div>
