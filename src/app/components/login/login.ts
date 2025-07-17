@@ -8,9 +8,10 @@ import {
   FormControl,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/user/auth.service';
-import { IUser } from '../../interfaces/user/user.interface';
-import * as AuthConstants from '../../shared/constants/auth.constants';
+import { Store } from '@ngrx/store';
+import * as AuthActions  from '../../state/auth/auth.actions';
+import { Observable } from 'rxjs';
+import * as AuthSelectors from '../../state/auth/auth.selectors';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,8 @@ import * as AuthConstants from '../../shared/constants/auth.constants';
   styleUrls: ['./login.scss'],
 })
 export class LoginComponent {
+  isLoggedIn$: Observable<boolean>;
+  authError$: Observable<string | null>;
   credentialForm: FormGroup = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
@@ -28,20 +31,14 @@ export class LoginComponent {
 
   constructor(
     // eslint-disable-next-line @angular-eslint/prefer-inject
-    private authService: AuthService,
-  ) {}
+    private store: Store,
+  ) {
+    this.isLoggedIn$ = this.store.select(AuthSelectors.selectIsLoggedIn);
+    this.authError$ = this.store.select(AuthSelectors.selectAuthError);
+  }
 
   onSubmit(): void {
     console.log(this.credentialForm.value);
-    this.authService.login(this.credentialForm.value).subscribe(
-      (response: IUser) => {
-        localStorage.setItem(AuthConstants.NAME_ACCESS_TOKEN, response.accessToken);
-        localStorage.setItem(AuthConstants.NAME_REFRESH_TOKEN, response.refreshToken);
-        this.router.navigateByUrl('/dashboard');
-      },
-      (error) => {
-        console.error('Error al crear usuario:', error);
-      },
-    );
+    this.store.dispatch(AuthActions.login({ user: this.credentialForm.value }));
   }
 }
