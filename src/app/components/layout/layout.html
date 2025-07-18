@@ -1,16 +1,16 @@
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
 <nav class="navbar">
   <div class="navbar__container">
     <a routerLink="/" class="navbar__logo">
       <img src="assets/img/logo.jpg" alt="Tu Logo" class="navbar__logo-img" />
-      EcommerceIR
+      {{ 'APP_TITLE' | translate }}
     </a>
-    <!--
-    <div class="navbar__menu-toggle" [class.is-active]="isMenuOpen" (click)="toggleMenu()">
+    <a class="navbar__menu-toggle" [class.is-active]="isMenuOpen" (click)="toggleMenu()">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
-    </div>
-    -->
+    </a>
     <ul class="navbar__links" [class.is-open]="isMenuOpen">
       <li class="navbar__item">
         <a routerLink="/home" routerLinkActive="active" class="navbar__link" (click)="closeMenu()">Inicio</a>
@@ -26,6 +26,13 @@
       </li>
       <li class="navbar__item navbar__btn">
         <a routerLink="/login" class="navbar__button" (click)="closeMenu()">Cerrar Sesión</a>
+      </li>
+      <li class="navbar__item navbar__btn">
+        <select (change)="changeLanguage($event)">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+        </select>
       </li>
     </ul>
   </div>

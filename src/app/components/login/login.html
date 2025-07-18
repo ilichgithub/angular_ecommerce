@@ -1,5 +1,5 @@
 <div class="login-container">
-    <h2>Bienvenido</h2>
+    <h2>Bienvenido {{ 'APP_TITLE' | translate }}</h2>
     <form [formGroup]="credentialForm">
         <div class="input-group">
             <input type="text" id="username" formControlName="username" name="username" placeholder=" " required>

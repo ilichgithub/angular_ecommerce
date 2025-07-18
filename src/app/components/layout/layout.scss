@@ -8,7 +8,7 @@ $text-color-dark: #333333;
 $hover-color: #5b008a; // Morado oscuro para hover
 $button-bg: $secondary-color;
 $button-hover-bg: darken($secondary-color, 10%);
-$breakpoint-tablet: 768px; // Para pantallas pequeñas/medianas
+$breakpoint-tablet: 1000px; // Para pantallas pequeñas/medianas
 
 .navbar {
   background-color: $primary-color;
@@ -109,6 +109,7 @@ $breakpoint-tablet: 768px; // Para pantallas pequeñas/medianas
 
   &__item {
     margin: 0 1rem;
+    align-content: center;
 
     @media (max-width: $breakpoint-tablet) {
       margin: 0.5rem 0;
