@@ -62,11 +62,22 @@ export class AuthEffects {
     () =>
       this.actions$.pipe(
         ofType(AuthActions.logout),
-        tap(() => {
-          localStorage.removeItem(AuthConstants.NAME_ACCESS_TOKEN);
-          localStorage.removeItem(AuthConstants.NAME_REFRESH_TOKEN);
-          this.router.navigate(['/login']);
-        }),
+        mergeMap(({ user }) => {
+          return this.authService.logout(user).pipe(
+            map(() => {
+              localStorage.removeItem(AuthConstants.NAME_ACCESS_TOKEN);
+              localStorage.removeItem(AuthConstants.NAME_REFRESH_TOKEN);
+              this.router.navigate(['/login']);
+            }),
+            catchError(() =>
+              of(
+                AuthActions.loginFailure({
+                  error: 'Credenciales inválidas o error de red.',
+                }),
+              ),
+            ),
+          )},
+        ),
       ),
     { dispatch: false }
   );

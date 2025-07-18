@@ -1,0 +1,182 @@
+/* src/app/components/navbar/navbar.component.scss */
+
+// Variables SCSS (pueden ir en un archivo _variables.scss global también)
+$primary-color: #6a1b9a; // Morado
+$secondary-color: #9c27b0; // Morado claro
+$text-color-light: #ffffff;
+$text-color-dark: #333333;
+$hover-color: #5b008a; // Morado oscuro para hover
+$button-bg: $secondary-color;
+$button-hover-bg: darken($secondary-color, 10%);
+$breakpoint-tablet: 768px; // Para pantallas pequeñas/medianas
+
+.navbar {
+  background-color: $primary-color;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: sticky; // Para que la navbar se quede arriba al hacer scroll
+  top: 0;
+  z-index: 1000; // Asegura que esté por encima de otros elementos
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem; // Espaciado a los lados
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    color: $text-color-light;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: lighten($text-color-light, 10%);
+    }
+
+    &-img {
+      height: 40px; // Tamaño del logo
+      margin-right: 0.8rem;
+      border-radius: 50%; // Si quieres un logo circular
+    }
+  }
+
+  &__menu-toggle {
+    display: none; // Oculto por defecto en pantallas grandes
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001; // Para que esté sobre el menú cuando se abre
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: $text-color-light;
+      margin: 4px 0;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &.is-active {
+      .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .bar:nth-child(2) {
+        opacity: 0;
+      }
+      .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      display: flex; // Visible en pantallas pequeñas
+    }
+  }
+
+  &__links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    transition: all 0.4s ease-in-out; // Transición para el menú responsivo
+
+    @media (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+      position: absolute;
+      top: 100%; // Debajo de la navbar
+      left: 0;
+      width: 100%;
+      background-color: darken($primary-color, 5%); // Un poco más oscuro para el menú
+      transform: translateY(-100%); // Oculto por defecto
+      opacity: 0;
+      pointer-events: none; // No clicable cuando está oculto
+      height: auto; // Altura automática
+      padding-bottom: 1rem; // Un poco de padding al final
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+      &.is-open {
+        transform: translateY(0); // Visible
+        opacity: 1;
+        pointer-events: auto; // Clicable
+      }
+    }
+  }
+
+  &__item {
+    margin: 0 1rem;
+
+    @media (max-width: $breakpoint-tablet) {
+      margin: 0.5rem 0;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  &__link {
+    color: $text-color-light;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 5px; // Pequeño redondeo para el fondo del hover
+
+    &:hover {
+      color: lighten($text-color-light, 15%);
+      background-color: rgba(255, 255, 255, 0.1); // Fondo sutil al hacer hover
+      transform: translateY(-2px); // Efecto de elevación
+    }
+
+    &.active { // Clase para la ruta activa
+      color: $secondary-color; // Color de acento para el enlace activo
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      display: block; // Ocupa todo el ancho del item
+      padding: 0.8rem 1rem;
+      font-size: 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1); // Separador en móvil
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__btn {
+    margin-left: 1.5rem; // Espacio para el botón
+
+    @media (max-width: $breakpoint-tablet) {
+      margin-top: 1rem;
+      margin-left: 0; // Sin margen extra en móvil
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: $button-bg;
+    color: $text-color-light;
+    text-decoration: none;
+    border-radius: 25px; // Botón con bordes redondeados
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background-color: $button-hover-bg;
+      transform: translateY(-3px); // Efecto de elevación más pronunciado
+    }
+
+    &:active {
+      transform: translateY(0); // Vuelve a la posición original al hacer clic
+    }
+  }
+}

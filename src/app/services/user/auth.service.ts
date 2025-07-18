@@ -19,4 +19,8 @@ export class AuthService extends BaseService<IUser> {
   login(user: IUser) {
     return this.service.post("http://localhost:8080/api/auth/login",user);
   }
+
+  logout(user: IUser) {
+    return this.service.post("http://localhost:8080/api/auth/logout",user);
+  }
 }

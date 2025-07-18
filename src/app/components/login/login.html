@@ -9,7 +9,7 @@
             <input type="password" id="password" formControlName="password" name="password" placeholder=" " required>
             <label for="password">Contraseña</label>
         </div>
-        <button type="button" (click)="onSubmit()" class="login-button">Iniciar Sesión</button>
+        <button type="button" (click)="onSubmit()" class="login-button" [disabled]="isLoading">Iniciar Sesión</button>
         <div class="forgot-password">
             <a href="#">¿Olvidaste tu contraseña?</a>
         </div>

@@ -20,6 +20,7 @@ import * as AuthSelectors from '../../state/auth/auth.selectors';
   styleUrls: ['./login.scss'],
 })
 export class LoginComponent {
+  isLoading = false;
   isLoggedIn$: Observable<boolean>;
   authError$: Observable<string | null>;
   credentialForm: FormGroup = new FormGroup({
@@ -33,6 +34,9 @@ export class LoginComponent {
     // eslint-disable-next-line @angular-eslint/prefer-inject
     private store: Store,
   ) {
+    this.store.select(AuthSelectors.selectAuthLoading).subscribe(
+      (obj) => this.isLoading = obj
+    );
     this.isLoggedIn$ = this.store.select(AuthSelectors.selectIsLoggedIn);
     this.authError$ = this.store.select(AuthSelectors.selectAuthError);
   }
