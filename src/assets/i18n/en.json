@@ -4,10 +4,14 @@
   "BUTTONS": {
     "LOGIN": "Sign In",
     "LOGOUT": "Log Out",
-    "SEARCH": "Search"
+    "SEARCH": "Search",
+    "CREATE_ACCOUNT": "Create Account"
   },
   "PLACEHOLDERS": {
-    "SEARCH_PRODUCTS": "Search products..."
+    "SEARCH_PRODUCTS": "Search products...",
+    "USER_NAME": "Username",
+    "PASSWORD": "Password"
   },
-  "GREETING": "Hello, {{name}}!"
+  "GREETING": "Hello, {{name}}!",
+  "WELCOME": "Welcome"
 }

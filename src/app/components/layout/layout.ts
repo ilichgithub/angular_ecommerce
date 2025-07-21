@@ -1,8 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink, RouterModule, RouterOutlet } from '@angular/router'; // Necesario para routerLink, routerLinkActive
 import * as AuthActions from '../../state/auth/auth.actions';
 import { Store } from '@ngrx/store';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-layout',
@@ -17,7 +17,6 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class LayoutComponent {
   isMenuOpen = false; // Estado para controlar si el menú móvil está abierto
-  translate = inject(TranslateService);
 
   constructor(
     // eslint-disable-next-line @angular-eslint/prefer-inject
@@ -36,17 +35,5 @@ export class LayoutComponent {
       }),
     );
     this.isMenuOpen = false;
-  }
-
-  changeLanguage(event: Event): void {
-    const lang = (event.target as HTMLSelectElement).value;
-    this.translate.use(lang); // Cambia el idioma actual de la aplicación
-
-    // Ejemplo de cómo obtener una traducción en el código TypeScript
-    /*
-    this.translate.get('GREETING', { name: 'Juan' }).subscribe((res: string) => {
-      console.log(res); // Imprimirá "Hola, Juan!" o "Hello, Juan!"
-    });
-    */
   }
 }

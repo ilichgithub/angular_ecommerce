@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { SpinnerComponent } from './components/spinner/spinner';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
+import { LanguageSelectorComponent } from './components/language-selector/language-selector';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SpinnerComponent, TranslateModule, CommonModule],
+  imports: [RouterOutlet, SpinnerComponent, TranslateModule, CommonModule, LanguageSelectorComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
