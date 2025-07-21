@@ -1,0 +1,17 @@
+{
+  "APP_TITLE": "My Online Store",
+  "APP_DESCRIPTION": "Explore our wide selection of products.",
+  "BUTTONS": {
+    "LOGIN": "Sign In",
+    "LOGOUT": "Log Out",
+    "SEARCH": "Search",
+    "CREATE_ACCOUNT": "Create Account"
+  },
+  "PLACEHOLDERS": {
+    "SEARCH_PRODUCTS": "Search products...",
+    "USER_NAME": "Username",
+    "PASSWORD": "Password"
+  },
+  "GREETING": "Hello, {{name}}!",
+  "WELCOME": "Welcome"
+}

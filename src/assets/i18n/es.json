@@ -1,0 +1,17 @@
+{
+  "APP_TITLE": "Mi Tienda Online",
+  "APP_DESCRIPTION": "Explora nuestra gran selección de productos.",
+  "BUTTONS": {
+    "LOGIN": "Iniciar Sesión",
+    "LOGOUT": "Cerrar Sesión",
+    "SEARCH": "Buscar",
+    "CREATE_ACCOUNT": "Crear Cuenta"
+  },
+  "PLACEHOLDERS": {
+    "SEARCH_PRODUCTS": "Buscar productos...",
+    "USER_NAME": "Nombre de usuario",
+    "PASSWORD": "Contraseña"
+  },
+  "GREETING": "Hola, {{name}}!",
+  "WELCOME": "Bienvenido"
+}

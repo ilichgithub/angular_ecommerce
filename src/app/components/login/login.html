@@ -1,0 +1,17 @@
+<div class="login-container">
+    <h2>{{ 'WELCOME' | translate }}</h2>
+    <form [formGroup]="credentialForm">
+        <div class="input-group">
+            <input type="text" id="username" formControlName="username" name="username" placeholder=" " required>
+            <label for="username">{{ 'PLACEHOLDERS.USER_NAME' | translate }}</label>
+        </div>
+        <div class="input-group">
+            <input type="password" id="password" formControlName="password" name="password" placeholder=" " required>
+            <label for="password">{{ 'PLACEHOLDERS.PASSWORD' | translate }}</label>
+        </div>
+        <button type="button" (click)="onSubmit()" class="login-button" [disabled]="isLoading">{{ 'BUTTONS.LOGIN' | translate }}</button>
+        <div class="forgot-password">
+            <a href="#">{{ 'BUTTONS.CREATE_ACCOUNT' | translate }}</a>
+        </div>
+    </form>
+</div>

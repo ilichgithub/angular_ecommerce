@@ -1,0 +1,5 @@
+<div class="language-selector-container">
+  <select (change)="changeLanguage($event)" [ngModel]="currentLang" class="language-select">
+    <option *ngFor="let lang of availableLangs" [value]="lang">{{ lang.toUpperCase() }}</option>
+  </select>
+</div>

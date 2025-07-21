@@ -1,0 +1,52 @@
+.language-selector-container {
+  position: fixed; /* Lo fija en la pantalla */
+  bottom: 20px;    /* 20px desde abajo */
+  right: 20px;     /* 20px desde la derecha */
+  z-index: 2000;   /* Asegura que esté por encima de la mayoría de los elementos */
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+  padding: 8px 12px;
+  border-radius: 25px; /* Bordes muy redondeados para un aspecto de "píldora" */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Borde suave */
+  transition: all 0.3s ease-in-out; /* Transición para efectos de hover */
+
+  &:hover {
+    transform: translateY(-3px); /* Ligero efecto de elevación al pasar el ratón */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.language-select {
+  border: none; /* Elimina el borde nativo del select */
+  background-color: transparent; /* Fondo transparente */
+  color: #333; /* Color de texto oscuro */
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  outline: none; /* Elimina el contorno al hacer focus */
+  cursor: pointer;
+  -webkit-appearance: none; /* Oculta la flecha nativa en WebKit */
+  -moz-appearance: none;    /* Oculta la flecha nativa en Firefox */
+  appearance: none;         /* Oculta la flecha nativa */
+  text-align: center;
+  text-align-last: center; /* Centra el texto en la opción seleccionada */
+
+  /* Estilo para la flecha personalizada (opcional, si quieres reemplazar la nativa) */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px;
+  padding-right: 25px; /* Espacio para la flecha personalizada */
+
+
+  /* Estilos para las opciones */
+  option {
+    background-color: #f8f8f8;
+    color: #333;
+    padding: 5px;
+  }
+}

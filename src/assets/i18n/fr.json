@@ -1,0 +1,17 @@
+{
+  "APP_TITLE": "Ma Boutique en Ligne",
+  "APP_DESCRIPTION": "Découvrez notre vaste sélection de produits.",
+  "BUTTONS": {
+    "LOGIN": "Se Connecter",
+    "LOGOUT": "Se Déconnecter",
+    "SEARCH": "Rechercher",
+    "CREATE_ACCOUNT": "Créer un Compte"
+  },
+  "PLACEHOLDERS": {
+    "SEARCH_PRODUCTS": "Rechercher des produits...",
+    "USER_NAME": "Nom d'utilisateur",
+    "PASSWORD": "Mot de passe"
+  },
+  "GREETING": "Bonjour, {{name}} !",
+  "WELCOME": "Bienvenue"
+}
