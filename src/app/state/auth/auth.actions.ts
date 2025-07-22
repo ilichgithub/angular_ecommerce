@@ -1,4 +1,3 @@
-// src/app/state/auth/auth.actions.ts
 import { createAction, props } from '@ngrx/store';
 import { IUser } from '../../interfaces/user/user.interface';
 
@@ -20,4 +19,13 @@ export const loginFailure = createAction(
 export const logout = createAction(
   '[Auth] Logout',
   props<{ user : IUser }>()
+);
+
+export const create = createAction(
+  '[Auth] Create',
+  props<{ user : IUser }>() 
+);
+
+export const createSuccess = createAction(
+  '[Auth] Create Success'
 );

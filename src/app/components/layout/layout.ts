@@ -3,6 +3,7 @@ import { RouterLink, RouterModule, RouterOutlet } from '@angular/router'; // Nec
 import * as AuthActions from '../../state/auth/auth.actions';
 import { Store } from '@ngrx/store';
 import { TranslateModule } from '@ngx-translate/core';
+import { INITIAL_STATE_IUSER } from '../../shared/constants/auth.constants';
 
 @Component({
   selector: 'app-layout',
@@ -31,7 +32,7 @@ export class LayoutComponent {
     // Cierra el menú cuando se hace clic en un enlace (útil en móvil)
     this.store.dispatch(
       AuthActions.logout({
-        user: { accessToken: '', refreshToken: '', username: '', password: '' },
+        user: INITIAL_STATE_IUSER,
       }),
     );
     this.isMenuOpen = false;

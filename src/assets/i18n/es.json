@@ -20,5 +20,10 @@
     "IN_STOCK": "En Stock",
     "VIEW_DETAILS": "Ver Detalles",
     "ADD_TO_CART": "Añadir al Carrito"
+  },
+  "LOGIN": {
+    "NO_ACCOUNT_QUESTION": "¿No tienes una cuenta?",
+    "ACCOUNT_QUESTION": "¿Tienes una cuenta?",
+    "FORGOT_PASSWORD": "¿Olvidaste tu contraseña?"
   }
 }

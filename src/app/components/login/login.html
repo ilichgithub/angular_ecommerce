@@ -9,9 +9,17 @@
             <input type="password" id="password" formControlName="password" name="password" placeholder=" " required>
             <label for="password">{{ 'PLACEHOLDERS.PASSWORD' | translate }}</label>
         </div>
-        <button type="button" (click)="onSubmit()" class="login-button" [disabled]="isLoading">{{ 'BUTTONS.LOGIN' | translate }}</button>
-        <div class="forgot-password">
-            <a href="#">{{ 'BUTTONS.CREATE_ACCOUNT' | translate }}</a>
+        <button type="button" (click)="isCreate? onCreate() : onSubmit()" class="login-button" [disabled]="isLoading">{{
+            (isCreate?'BUTTONS.CREATE_ACCOUNT':'BUTTONS.LOGIN') | translate }}</button>
+        <div class="forgot-password" *ngIf="!isCreate">
+            <a href="#">{{ 'LOGIN.FORGOT_PASSWORD' | translate }}</a>
+        </div>
+
+        <div class="create-account-section">
+            <p>{{ (!isCreate?'LOGIN.NO_ACCOUNT_QUESTION':'LOGIN.ACCOUNT_QUESTION') | translate }}</p>
+            <button type="button" class="link-button" (click)="notIsCreate()">
+            {{ (!isCreate?'BUTTONS.CREATE_ACCOUNT':'BUTTONS.LOGIN') | translate }}
+            </button>
         </div>
     </form>
 </div>

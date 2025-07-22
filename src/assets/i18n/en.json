@@ -20,5 +20,10 @@
     "IN_STOCK": "In Stock",
     "VIEW_DETAILS": "View Details",
     "ADD_TO_CART": "Add to Cart"
+  },
+  "LOGIN": {
+    "NO_ACCOUNT_QUESTION": "Don't have an account?",
+    "ACCOUNT_QUESTION": "Do you have an account?",
+    "FORGOT_PASSWORD": "Forgot your password?"
   }
 }
