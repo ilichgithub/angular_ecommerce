@@ -1,24 +1,12 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
+import { ProductsListComponent } from "../product-list/product-list";
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [ProductsListComponent],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss'
 })
 export class DashboardComponent {
-  http = inject(HttpClient);
-  constructor(){
-    this.http.get("http://localhost:8080/api/product/getAll")
-              .subscribe({
-                next:(response)=>{
-                  console.log(response);
-                },
-                error:(error)=>{
-                  alert(error.error.message);
-                }
-              });
-  }
 
 }

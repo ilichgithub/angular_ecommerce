@@ -39,7 +39,7 @@ body {
     margin: 0;
     background-color: var(--background-color);
     color: var(--text-color);
-    overflow: hidden; /* Para las animaciones de fondo */
+    overflow-x: hidden; /* Para las animaciones de fondo */
 }
 /* Animación de fondo sutil */
 body::before {
@@ -47,8 +47,8 @@ body::before {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 75vw;
+    height: 45vh;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     opacity: 0.1;
     transform: scale(1.5) rotate(15deg);
