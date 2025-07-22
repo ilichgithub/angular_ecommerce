@@ -88,6 +88,7 @@ $error-color: #dc3545; // Rojo
     margin-bottom: 1rem;
     /* Para manejar textos largos */
     display: -webkit-box;
+    line-clamp: 2;
     -webkit-line-clamp: 2; /* Limita a 2 líneas */
     -webkit-box-orient: vertical;
     overflow: hidden;
