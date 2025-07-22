@@ -84,4 +84,26 @@ export class AuthEffects {
       ),
     { dispatch: false }
   );
+
+  create$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuthActions.create),
+      mergeMap(({ user }) =>
+        this.authService.create(user).pipe(
+          map((response) => {
+            this.errorService.showError(response.message);
+            return AuthActions.createSuccess();
+          }),
+          catchError((error) => {
+            this.errorService.showError(error);
+            return of(
+              AuthActions.loginFailure({
+                error: 'Error creando user',
+              }),
+            )},
+          ),
+        ),
+      ),
+    ),
+  );
 }

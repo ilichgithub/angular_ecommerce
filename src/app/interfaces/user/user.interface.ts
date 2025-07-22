@@ -4,4 +4,6 @@ export interface IUser {
   password: string;
   refreshToken: string;
   accessToken: string;
+
+  message: string;
 }
