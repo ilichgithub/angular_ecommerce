@@ -26,17 +26,6 @@ export class ProductsListComponent {
     this.store.select(ProductSelectors.selectProducts).subscribe(
       (obj) => this.products = obj
     );
-    /*
-    this.http.get<IProduct[]>("http://localhost:8080/api/product/getAll")
-              .subscribe({
-                next:(response)=>{
-                  this.products = response.slice(0,9);
-                },
-                error:(error)=>{
-                  alert(error.error.message);
-                }
-              });
-              */
   }
 
   onAddToCart(product: IProduct): void {
