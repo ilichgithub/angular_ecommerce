@@ -1,0 +1,158 @@
+/* Variables para consistencia (puedes moverlas a un archivo global) */
+$primary-color: #6a1b9a; // Morado
+$secondary-color: #9c27b0; // Morado claro
+$text-color-dark: #333333;
+$text-color-light: #ffffff;
+$warning-color: #ffc107; // Amarillo/Naranja
+$error-color: #dc3545; // Rojo
+
+.product-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Asegura que la imagen y el contenido no se salgan */
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Permite que las tarjetas en una grid tengan alturas uniformes */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer; /* Indica que es clicable */
+
+  &:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  &__image-container {
+    width: 100%;
+    padding-top: 75%; /* Ratio 4:3 (300/400 = 0.75) para mantener la proporción de la imagen */
+    position: relative;
+    overflow: hidden; /* Para recortar la imagen si es necesario */
+    background-color: #f0f0f0; /* Color de fondo mientras carga la imagen */
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen para que cubra el contenedor */
+    display: block;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover &__image {
+    transform: scale(1.05); /* Zoom sutil en la imagen al pasar el ratón */
+  }
+
+  &__out-of-stock {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: $error-color;
+    color: $text-color-light;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 10;
+  }
+
+  &__content {
+    padding: 1rem;
+    flex-grow: 1; /* Permite que el contenido ocupe el espacio disponible */
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: $primary-color;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  &__category {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+
+  &__description {
+    font-size: 0.95rem;
+    color: $text-color-dark;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    /* Para manejar textos largos */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limita a 2 líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $secondary-color;
+    margin-top: auto; /* Empuja el precio y el stock hacia abajo */
+    margin-bottom: 0.5rem;
+  }
+
+  &__stock {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  &__actions {
+    display: flex;
+    padding: 0 1rem 1rem;
+    gap: 0.8rem; /* Espacio entre los botones */
+    justify-content: center; /* Centra los botones horizontalmente */
+  }
+
+  &__button {
+    flex: 1; /* Permite que los botones ocupen el espacio disponible */
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &--details {
+      background-color: #f0f0f0;
+      color: $primary-color;
+      border: 1px solid $primary-color;
+
+      &:hover {
+        background-color: lighten($primary-color, 40%); /* Lighter purple on hover */
+        transform: translateY(-2px);
+      }
+    }
+
+    &--add-to-cart {
+      background-color: $secondary-color;
+      color: $text-color-light;
+
+      &:hover {
+        background-color: darken($secondary-color, 10%);
+        transform: translateY(-2px);
+      }
+
+      &:disabled {
+        background-color: #cccccc;
+        color: #999999;
+        cursor: not-allowed;
+        transform: none; /* Elimina la transformación de hover si está deshabilitado */
+        box-shadow: none;
+      }
+    }
+  }
+}

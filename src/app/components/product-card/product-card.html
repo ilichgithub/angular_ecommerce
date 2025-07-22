@@ -1,0 +1,29 @@
+<div class="product-card">
+  <div class="product-card__image-container">
+    <img [src]="product.imageUrl" [alt]="product.name" class="product-card__image">
+    <div *ngIf="product.stockQuantity === 0" class="product-card__out-of-stock">
+      {{ 'PRODUCT_CARD.OUT_OF_STOCK' | translate }}
+    </div>
+  </div>
+
+  <div class="product-card__content">
+    <h3 class="product-card__name">{{ product.name }}</h3>
+    <p class="product-card__category">{{ 'PRODUCT_CARD.CATEGORY' | translate }}: {{ product.categoryDTO.name }}</p>
+    <p class="product-card__description">{{ product.description | slice:0:100 }}...</p>
+    <p class="product-card__price">{{ product.price | currency:'USD':'symbol':'1.2-2' }}</p>
+    <p *ngIf="product.stockQuantity > 0" class="product-card__stock">
+      {{ 'PRODUCT_CARD.IN_STOCK' | translate }}: {{ product.stockQuantity }}
+    </p>
+  </div>
+
+  <div class="product-card__actions">
+    <button class="product-card__button product-card__button--details" (click)="viewDetails()">
+      {{ 'PRODUCT_CARD.VIEW_DETAILS' | translate }}
+    </button>
+    <button class="product-card__button product-card__button--add-to-cart"
+            [disabled]="product.stockQuantity === 0"
+            (click)="addToCart()">
+      {{ 'PRODUCT_CARD.ADD_TO_CART' | translate }}
+    </button>
+  </div>
+</div>

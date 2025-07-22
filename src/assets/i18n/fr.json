@@ -13,5 +13,12 @@
     "PASSWORD": "Mot de passe"
   },
   "GREETING": "Bonjour, {{name}} !",
-  "WELCOME": "Bienvenue"
+  "WELCOME": "Bienvenue",
+  "PRODUCT_CARD": {
+    "OUT_OF_STOCK": "RUPTURE DE STOCK",
+    "CATEGORY": "Catégorie",
+    "IN_STOCK": "En Stock",
+    "VIEW_DETAILS": "Voir les Détails",
+    "ADD_TO_CART": "Ajouter au Panier"
+  }
 }

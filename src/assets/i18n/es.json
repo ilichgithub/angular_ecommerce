@@ -13,5 +13,12 @@
     "PASSWORD": "Contraseña"
   },
   "GREETING": "Hola, {{name}}!",
-  "WELCOME": "Bienvenido"
+  "WELCOME": "Bienvenido",
+  "PRODUCT_CARD": {
+    "OUT_OF_STOCK": "AGOTADO",
+    "CATEGORY": "Categoría",
+    "IN_STOCK": "En Stock",
+    "VIEW_DETAILS": "Ver Detalles",
+    "ADD_TO_CART": "Añadir al Carrito"
+  }
 }

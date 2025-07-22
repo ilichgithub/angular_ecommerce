@@ -1,0 +1,9 @@
+
+    <div class="product-list-grid">
+      <app-product-card
+        *ngFor="let p of products"
+        [product]="p"
+        (addToCartClicked)="onAddToCart($event)"
+        (viewDetailsClicked)="onViewDetails($event)">
+      </app-product-card>
+    </div>

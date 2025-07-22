@@ -13,5 +13,12 @@
     "PASSWORD": "Password"
   },
   "GREETING": "Hello, {{name}}!",
-  "WELCOME": "Welcome"
+  "WELCOME": "Welcome",
+  "PRODUCT_CARD": {
+    "OUT_OF_STOCK": "OUT OF STOCK",
+    "CATEGORY": "Category",
+    "IN_STOCK": "In Stock",
+    "VIEW_DETAILS": "View Details",
+    "ADD_TO_CART": "Add to Cart"
+  }
 }

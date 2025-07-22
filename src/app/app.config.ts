@@ -26,6 +26,8 @@ import { tokenInterceptor } from './interceptor/token-interceptor';
 import { authReducer } from './state/auth/auth.reducer';
 import { AuthEffects } from './state/auth/auth.effects';
 import { LoadingInterceptor } from './interceptor/loading/loading-interceptor';
+import { productReducer } from './state/product/product.reducer';
+import { ProductEffects } from './state/product/product.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -41,8 +43,9 @@ export const appConfig: ApplicationConfig = {
     // --- Configuración de NgRx ---
     provideStore({
       auth: authReducer,
+      product: productReducer,
     }),
-    provideEffects([AuthEffects]),
+    provideEffects([AuthEffects,ProductEffects]),
     provideStoreDevtools({
       maxAge: 25, // Retiene un máximo de 25 estados en el historial
       logOnly: !isDevMode(), // Limita el registro de acciones cuando no estás en modo de desarrollo
