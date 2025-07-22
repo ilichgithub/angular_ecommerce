@@ -26,7 +26,7 @@ export class BaseService<T> {
    */
   protected handleError(error: HttpErrorResponse) {
     let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
+    if (error?.error?.message) {
       // Error del lado del cliente o de red
       errorMessage = `Error del cliente: ${error.error.message}`;
     } else {
