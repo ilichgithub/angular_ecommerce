@@ -91,7 +91,7 @@ export class AuthEffects {
       mergeMap(({ user }) =>
         this.authService.create(user).pipe(
           map((response) => {
-            this.errorService.showError(response.message);
+            this.errorService.showSuccess(response.message);
             return AuthActions.createSuccess();
           }),
           catchError((error) => {

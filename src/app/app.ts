@@ -4,7 +4,7 @@ import { SpinnerComponent } from './components/spinner/spinner';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { LanguageSelectorComponent } from './components/language-selector/language-selector';
-import { ErrorNotificationComponent } from "./components/error-notification/error-notification";
+import { NotificationComponent } from "./components/notification/notification";
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,7 @@ import { ErrorNotificationComponent } from "./components/error-notification/erro
     TranslateModule,
     CommonModule,
     LanguageSelectorComponent,
-    ErrorNotificationComponent,
+    NotificationComponent,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',
