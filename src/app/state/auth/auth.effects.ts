@@ -6,10 +6,12 @@ import * as AuthActions from './auth.actions';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/user/auth.service';
 import * as AuthConstants from '../../shared/constants/auth.constants';
+import { ErrorService } from '../../services/error/error.service';
 
 @Injectable()
 export class AuthEffects {
   actions$ = inject(Actions);
+  errorService = inject(ErrorService);
   constructor(
     // eslint-disable-next-line @angular-eslint/prefer-inject
     public authService: AuthService,
@@ -27,12 +29,13 @@ export class AuthEffects {
               user: response,
             }),
           ),
-          catchError(() =>
-            of(
+          catchError((error) => {
+            this.errorService.showError(error);
+            return of(
               AuthActions.loginFailure({
                 error: 'Credenciales inválidas o error de red.',
               }),
-            ),
+            )},
           ),
         ),
       ),
