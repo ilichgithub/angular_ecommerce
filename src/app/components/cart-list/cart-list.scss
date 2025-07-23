@@ -1,0 +1,253 @@
+/* Variables (asegúrate de que sean consistentes en todo el proyecto) */
+$primary-color: #6a1b9a; // Morado
+$secondary-color: #9c27b0; // Morado claro
+$text-color-dark: #333333;
+$text-color-light: #ffffff;
+$danger-color: #dc3545; // Rojo para eliminar
+
+.cart-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Arial', sans-serif;
+
+  h2 {
+    color: $primary-color;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    font-weight: 700;
+  }
+}
+
+.cart-items {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  margin-bottom: 30px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee; /* Separador entre ítems */
+
+  &:last-child {
+    border-bottom: none; /* No borde en el último ítem */
+  }
+
+  .item-details {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Permite que ocupe el espacio disponible */
+
+    .item-image {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 15px;
+    }
+
+    .item-info {
+      flex-grow: 1;
+    }
+
+    .item-name {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: $text-color-dark;
+      margin: 0 0 5px 0;
+    }
+
+    .item-price {
+      font-size: 1rem;
+      color: #777;
+      margin: 0;
+    }
+  }
+
+  .item-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre input y botón */
+  }
+
+  .quantity-control {
+    display: flex; /* Para centrar el input si se desea */
+    align-items: center;
+  }
+
+  .quantity-input {
+    width: 60px; /* Ancho más pequeño para cantidad */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: center;
+    appearance: textfield;
+    -moz-appearance: textfield; /* Firefox */
+
+    /* Eliminar flechas en Chrome/Safari/Edge */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $secondary-color;
+      box-shadow: 0 0 0 3px rgba(156, 39, 176, 0.2);
+    }
+  }
+
+  .remove-button {
+    background-color: $danger-color;
+    color: $text-color-light;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 15px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: darken($danger-color, 10%);
+    }
+  }
+}
+
+.cart-summary {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: right;
+  margin-top: 30px;
+  border: 1px solid #eee;
+
+  p {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $text-color-dark;
+    margin-bottom: 15px;
+  }
+
+  .total-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $primary-color;
+  }
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: flex-end; /* Alinea los botones a la derecha */
+  gap: 15px; /* Espacio entre botones */
+  margin-top: 20px;
+
+  .clear-cart-button,
+  .checkout-button {
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .clear-cart-button {
+    background-color: #f0f0f0;
+    color: $danger-color;
+    border: 1px solid $danger-color;
+
+    &:hover {
+      background-color: #ffe5e5;
+      transform: translateY(-2px);
+    }
+  }
+
+  .checkout-button {
+    background-color: $primary-color;
+    color: $text-color-light;
+    border: none;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 50px 20px;
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  background-color: #f8f8f8;
+  margin-top: 30px;
+
+  p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 25px;
+  }
+
+  .primary-button {
+    background-color: $secondary-color;
+    color: $text-color-light;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/* Para ocultar la etiqueta para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+// Media queries para dispositivos más pequeños
+@media (max-width: 768px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    .item-details {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .item-controls {
+      width: 100%;
+      justify-content: space-between;
+      gap: 10px;
+    }
+  }
+  .cart-actions {
+    flex-direction: column;
+    align-items: center;
+    .clear-cart-button, .checkout-button {
+      width: 100%;
+    }
+  }
+}

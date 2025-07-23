@@ -19,5 +19,17 @@ export class ProductCartService extends BaseService<IProductCart>  {
   addProductToCart(productCart: IProductCart) {
     return this.service.post("http://localhost:8080/api/cart/add",productCart);
   }
+
+  updateProductToCart(productCart: IProductCart) {
+    return this.service.put("http://localhost:8080/api/cart/update",productCart);
+  }
+
+  deleteProductToCart(productId: number) {
+    return this.service.delete("http://localhost:8080/api/cart/remove/"+productId);
+  }
+
+  clearCart() {
+    return this.service.delete("http://localhost:8080/api/cart/clear");
+  }
   
 }

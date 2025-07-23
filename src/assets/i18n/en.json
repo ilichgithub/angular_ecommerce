@@ -19,11 +19,43 @@
     "CATEGORY": "Category",
     "IN_STOCK": "In Stock",
     "VIEW_DETAILS": "View Details",
-    "ADD_TO_CART": "Add to Cart"
+    "ADD_TO_CART": "Add to Cart",
+    "QUANTITY": "Quantity"
   },
   "LOGIN": {
     "NO_ACCOUNT_QUESTION": "Don't have an account?",
     "ACCOUNT_QUESTION": "Do you have an account?",
     "FORGOT_PASSWORD": "Forgot your password?"
+  },
+  "NAVBAR": {
+    "HOME": "Home",
+    "PRODUCTS": "Products",
+    "ABOUT": "About Us",
+    "CONTACT": "Contact",
+    "CART": "Cart"
+  },
+  "CART": {
+    "TITLE": "Your Shopping Cart",
+    "TOTAL": "Total",
+    "REMOVE": "Remove",
+    "CLEAR_CART": "Clear Cart",
+    "CHECKOUT": "Checkout",
+    "EMPTY_MESSAGE": "Your cart is empty. Add some products!",
+    "GO_TO_PRODUCTS": "Go to Products",
+    "LOAD_ERROR": "Could not load the cart. Please try again.",
+    "UPDATE_QUANTITY_ERROR": "Could not update quantity.",
+    "REMOVE_ITEM_ERROR": "Could not remove item from cart.",
+    "CLEAR_CART_ERROR": "Could not clear the cart.",
+    "CONFIRM_REMOVE_ITEM": "Are you sure you want to remove this item?",
+    "CONFIRM_CLEAR_CART": "Are you sure you want to clear your entire cart?",
+    "CHECKOUT_SUCCESS": "Your purchase has been successfully completed!",
+    "EMPTY_CART_CHECKOUT_ERROR": "You cannot proceed to checkout with an empty cart."
+  },
+  "ERRORS": {
+    "GENERIC_ERROR": "An unexpected error occurred.",
+    "LOGIN_FAILED": "Incorrect credentials. Please try again.",
+    "NETWORK_ERROR": "Could not connect to the server. Check your connection.",
+    "PRODUCT_NOT_FOUND": "Product not found.",
+    "ADD_TO_CART_FAILED": "Could not add product to cart."
   }
 }
