@@ -19,11 +19,43 @@
     "CATEGORY": "Categoría",
     "IN_STOCK": "En Stock",
     "VIEW_DETAILS": "Ver Detalles",
-    "ADD_TO_CART": "Añadir al Carrito"
+    "ADD_TO_CART": "Añadir al Carrito",
+    "QUANTITY": "Cantidad" 
   },
   "LOGIN": {
     "NO_ACCOUNT_QUESTION": "¿No tienes una cuenta?",
     "ACCOUNT_QUESTION": "¿Tienes una cuenta?",
     "FORGOT_PASSWORD": "¿Olvidaste tu contraseña?"
+  },
+  "NAVBAR": {
+    "HOME": "Inicio",
+    "PRODUCTS": "Productos",
+    "ABOUT": "Nosotros",
+    "CONTACT": "Contacto",
+    "CART": "Carrito"
+  },
+  "CART": {
+    "TITLE": "Tu Carrito de Compras",
+    "TOTAL": "Total",
+    "REMOVE": "Eliminar",
+    "CLEAR_CART": "Vaciar Carrito",
+    "CHECKOUT": "Finalizar Compra",
+    "EMPTY_MESSAGE": "Tu carrito está vacío. ¡Añade algunos productos!",
+    "GO_TO_PRODUCTS": "Ir a Productos",
+    "LOAD_ERROR": "No se pudo cargar el carrito. Inténtalo de nuevo.",
+    "UPDATE_QUANTITY_ERROR": "No se pudo actualizar la cantidad.",
+    "REMOVE_ITEM_ERROR": "No se pudo eliminar el ítem del carrito.",
+    "CLEAR_CART_ERROR": "No se pudo vaciar el carrito.",
+    "CONFIRM_REMOVE_ITEM": "¿Estás seguro de que quieres eliminar este ítem?",
+    "CONFIRM_CLEAR_CART": "¿Estás seguro de que quieres vaciar todo el carrito?",
+    "CHECKOUT_SUCCESS": "¡Tu compra se ha realizado con éxito!",
+    "EMPTY_CART_CHECKOUT_ERROR": "No puedes finalizar la compra con un carrito vacío."
+  },
+  "ERRORS": {
+    "GENERIC_ERROR": "Ha ocurrido un error inesperado.",
+    "LOGIN_FAILED": "Credenciales incorrectas. Inténtalo de nuevo.",
+    "NETWORK_ERROR": "No se pudo conectar al servidor. Revisa tu conexión.",
+    "PRODUCT_NOT_FOUND": "Producto no encontrado.",
+    "ADD_TO_CART_FAILED": "No se pudo añadir el producto al carrito."
   }
 }

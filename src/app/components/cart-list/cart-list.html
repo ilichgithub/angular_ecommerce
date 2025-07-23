@@ -1,0 +1,53 @@
+<div class="cart-container">
+  <h2>{{ 'CART.TITLE' | translate }}</h2>
+
+  <ng-container *ngIf="cart && cart.items.length > 0; else emptyCart">
+    <div class="cart-items">
+      <div *ngFor="let item of cart.items" class="cart-item">
+        <div class="item-details">
+          <div class="item-info">
+            <h3 class="item-name">{{ item.productName }}</h3>
+            <p class="item-price">{{ item.productPrice | currency:'USD':'symbol':'1.2-2' }}</p>
+          </div>
+        </div>
+
+        <div class="item-controls">
+          <div class="quantity-control">
+            <label [for]="'quantity-' + item.cartItemId" class="sr-only">{{ 'PRODUCT_CARD.QUANTITY' | translate }}</label>
+            <input
+              type="number"
+              [id]="'quantity-' + item.cartItemId"
+              class="quantity-input"
+              [(ngModel)]="item.quantity"
+              [min]="1"
+              (change)="onQuantityChange(item)"
+              (keyup.enter)="onQuantityChange(item)"
+            >
+          </div>
+          <button class="remove-button" (click)="removeItem(item.cartItemId)">
+            {{ 'CART.REMOVE' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-summary">
+      <p>{{ 'CART.TOTAL' | translate }}: <span class="total-price">{{ cart.total | currency:'USD':'symbol':'1.2-2' }}</span></p>
+      <div class="cart-actions">
+        <button class="clear-cart-button" (click)="clearCart()">
+          {{ 'CART.CLEAR_CART' | translate }}
+        </button>
+        <button class="checkout-button" (click)="checkout()">
+          {{ 'CART.CHECKOUT' | translate }}
+        </button>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #emptyCart>
+    <div class="empty-cart">
+      <p>{{ 'CART.EMPTY_MESSAGE' | translate }}</p>
+      <button class="primary-button" routerLink="/products">{{ 'CART.GO_TO_PRODUCTS' | translate }}</button>
+    </div>
+  </ng-template>
+</div>

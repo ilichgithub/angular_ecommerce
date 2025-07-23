@@ -31,13 +31,14 @@ export class CartEffects {
               cart: response,
             }),
           ),
-          catchError((error) =>
-            of(
+          catchError((error) => {
+            this.errorService.showError(error.message);
+            return of(
               CartActions.error({
-                error: error.error.message,
+                error: error.message,
               }),
-            ),
-          ),
+            )
+          }),
         ),
       ),
     ),
@@ -57,6 +58,72 @@ export class CartEffects {
             return of(
               CartActions.error({
                 error: 'Error addProductToCart',
+              }),
+            );
+          }),
+        ),
+      ),
+    ),
+  );
+
+  updateProductToCart$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(CartActions.updateProductToCart),
+      mergeMap(({ productCart }) =>
+        this.productCartService.updateProductToCart(productCart).pipe(
+          map(() => {
+            this.errorService.showSuccess('Success');
+            return CartActions.getByUser();
+          }),
+          catchError((error) => {
+            this.errorService.showError(error);
+            return of(
+              CartActions.error({
+                error: 'Error updateProductToCart',
+              }),
+            );
+          }),
+        ),
+      ),
+    ),
+  );
+
+  deleteProductToCart$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(CartActions.deleteProductToCart),
+      mergeMap(({ productId }) =>
+        this.productCartService.deleteProductToCart(productId).pipe(
+          map(() => {
+            this.errorService.showSuccess('Success');
+            return CartActions.getByUser();
+          }),
+          catchError((error) => {
+            this.errorService.showError(error);
+            return of(
+              CartActions.error({
+                error: 'Error deleteProductToCart',
+              }),
+            );
+          }),
+        ),
+      ),
+    ),
+  );
+
+  clearCart$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(CartActions.clearCart),
+      mergeMap(() =>
+        this.productCartService.clearCart().pipe(
+          map(() => {
+            this.errorService.showSuccess('Success');
+            return CartActions.getByUser();
+          }),
+          catchError((error) => {
+            this.errorService.showError(error);
+            return of(
+              CartActions.error({
+                error: 'Error clearCart',
               }),
             );
           }),

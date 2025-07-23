@@ -29,4 +29,22 @@ export const cartReducer = createReducer(
     isLoading: true,
     error: null,
   })),
+
+  on(CartActions.updateProductToCart, (state) => ({
+    ...state,
+    isLoading: true,
+    error: null,
+  })),
+
+  on(CartActions.deleteProductToCart, (state) => ({
+    ...state,
+    isLoading: true,
+    error: null,
+  })),
+
+  on(CartActions.clearCart, (state) => ({
+    ...state,
+    isLoading: true,
+    error: null,
+  })),
 );

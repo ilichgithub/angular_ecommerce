@@ -19,11 +19,43 @@
     "CATEGORY": "Catégorie",
     "IN_STOCK": "En Stock",
     "VIEW_DETAILS": "Voir les Détails",
-    "ADD_TO_CART": "Ajouter au Panier"
+    "ADD_TO_CART": "Ajouter au Panier",
+    "QUANTITY": "Quantité"
   },
   "LOGIN": {
     "NO_ACCOUNT_QUESTION": "Vous n'avez pas de compte ?",
     "ACCOUNT_QUESTION": "as-tu un compte ?",
     "FORGOT_PASSWORD": "Mot de passe oublié?"
+  },
+  "NAVBAR": {
+    "HOME": "Accueil",
+    "PRODUCTS": "Produits",
+    "ABOUT": "À Propos",
+    "CONTACT": "Contact",
+    "CART": "Panier"
+  },
+  "CART": {
+    "TITLE": "Votre Panier",
+    "TOTAL": "Total",
+    "REMOVE": "Supprimer",
+    "CLEAR_CART": "Vider le Panier",
+    "CHECKOUT": "Commander",
+    "EMPTY_MESSAGE": "Votre panier est vide. Ajoutez des produits !",
+    "GO_TO_PRODUCTS": "Aller aux Produits",
+    "LOAD_ERROR": "Impossible de charger le panier. Veuillez réessayer.",
+    "UPDATE_QUANTITY_ERROR": "Impossible de mettre à jour la quantité.",
+    "REMOVE_ITEM_ERROR": "Impossible de supprimer l'article du panier.",
+    "CLEAR_CART_ERROR": "Impossible de vider le panier.",
+    "CONFIRM_REMOVE_ITEM": "Êtes-vous sûr de vouloir supprimer cet article ?",
+    "CONFIRM_CLEAR_CART": "Êtes-vous sûr de vouloir vider tout votre panier ?",
+    "CHECKOUT_SUCCESS": "Votre achat a été effectué avec succès !",
+    "EMPTY_CART_CHECKOUT_ERROR": "Vous ne pouvez pas passer à la caisse avec un panier vide."
+  },
+  "ERRORS": {
+    "GENERIC_ERROR": "Une erreur inattendue est survenue.",
+    "LOGIN_FAILED": "Identifiants incorrects. Veuillez réessayer.",
+    "NETWORK_ERROR": "Impossible de se connecter au serveur. Vérifiez votre connexion.",
+    "PRODUCT_NOT_FOUND": "Produit introuvable.",
+    "ADD_TO_CART_FAILED": "Impossible d'ajouter le produit au panier."
   }
 }
