@@ -48,7 +48,6 @@ export class LoginComponent {
   }
 
   onSubmit(): void {
-    console.log(this.credentialForm.value);
     this.store.dispatch(AuthActions.login({ user: this.credentialForm.value }));
   }
 

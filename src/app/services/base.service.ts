@@ -45,7 +45,18 @@ export class BaseService<T> {
    * Obtiene todos los recursos.
    * @returns Un Observable de un array de entidades (T[]).
    */
-  get(apiUrl: string): Observable<T[]> {
+  get(apiUrl: string): Observable<T> {
+    return this.http.get<T>(apiUrl)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  /**
+   * Obtiene todos los recursos.
+   * @returns Un Observable de un array de entidades (T[]).
+   */
+  getAll(apiUrl: string): Observable<T[]> {
     return this.http.get<T[]>(apiUrl)
       .pipe(
         catchError(this.handleError)

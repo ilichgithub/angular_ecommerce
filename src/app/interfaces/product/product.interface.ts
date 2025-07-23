@@ -12,4 +12,5 @@ export interface IProduct {
   stockQuantity: number;
   imageUrl: string;
   categoryDTO: ICategory;
+  quantity: number;
 }
