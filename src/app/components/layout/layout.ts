@@ -4,6 +4,9 @@ import * as AuthActions from '../../state/auth/auth.actions';
 import { Store } from '@ngrx/store';
 import { TranslateModule } from '@ngx-translate/core';
 import { INITIAL_STATE_IUSER } from '../../shared/constants/auth.constants';
+import { getByUser } from '../../state/cart/cart.actions';
+import { selectCart } from '../../state/cart/cart.selectors';
+import { ICart } from '../../interfaces/cart/cart.interface';
 
 @Component({
   selector: 'app-layout',
@@ -18,11 +21,17 @@ import { INITIAL_STATE_IUSER } from '../../shared/constants/auth.constants';
 })
 export class LayoutComponent {
   isMenuOpen = false; // Estado para controlar si el menú móvil está abierto
+  cartUser: ICart | null = null;
 
   constructor(
     // eslint-disable-next-line @angular-eslint/prefer-inject
     private store: Store,
-  ) {}
+  ) {
+      this.store.dispatch(getByUser());
+      this.store
+        .select(selectCart)
+        .subscribe((obj) => (this.cartUser = obj));
+  }
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen; // Cambia el estado del menú

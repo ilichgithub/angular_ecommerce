@@ -28,6 +28,8 @@ import { AuthEffects } from './state/auth/auth.effects';
 import { LoadingInterceptor } from './interceptor/loading/loading-interceptor';
 import { productReducer } from './state/product/product.reducer';
 import { ProductEffects } from './state/product/product.effects';
+import { cartReducer } from './state/cart/cart.reducer';
+import { CartEffects } from './state/cart/cart.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -44,8 +46,9 @@ export const appConfig: ApplicationConfig = {
     provideStore({
       auth: authReducer,
       product: productReducer,
+      cart: cartReducer,
     }),
-    provideEffects([AuthEffects,ProductEffects]),
+    provideEffects([AuthEffects,ProductEffects,CartEffects]),
     provideStoreDevtools({
       maxAge: 25, // Retiene un máximo de 25 estados en el historial
       logOnly: !isDevMode(), // Limita el registro de acciones cuando no estás en modo de desarrollo

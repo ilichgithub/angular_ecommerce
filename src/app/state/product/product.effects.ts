@@ -20,7 +20,7 @@ export class ProductEffects {
     this.actions$.pipe(
       ofType(ProductActions.getAll),
       mergeMap(() =>
-        this.productService.getAll().pipe(
+        this.productService.getProductAll().pipe(
           map((response) =>
             ProductActions.setAll({
               products: response,
