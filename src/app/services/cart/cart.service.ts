@@ -6,18 +6,18 @@ import { ICart } from '../../interfaces/cart/cart.interface';
 @Injectable({
   providedIn: 'root'
 })
-export class CartService extends BaseService<ICart>  {
+export class CartService extends BaseService {
   
   constructor(
     // eslint-disable-next-line @angular-eslint/prefer-inject
     http: HttpClient,
     // eslint-disable-next-line @angular-eslint/prefer-inject
-    private service: BaseService<ICart>) {
+    private service: BaseService) {
     super(http);
   }
   
   getCartByUser() {
-    return this.service.get("http://localhost:8080/api/cart");
+    return this.service.get<ICart>("http://localhost:8080/api/cart");
   }
   
 }
