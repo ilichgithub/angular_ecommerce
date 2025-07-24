@@ -6,30 +6,30 @@ import { BaseService } from '../base.service';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductCartService extends BaseService<IProductCart>  {
+export class ProductCartService extends BaseService  {
   
   constructor(
     // eslint-disable-next-line @angular-eslint/prefer-inject
     http: HttpClient,
     // eslint-disable-next-line @angular-eslint/prefer-inject
-    private service: BaseService<IProductCart>) {
+    private service: BaseService) {
     super(http);
   }
 
   addProductToCart(productCart: IProductCart) {
-    return this.service.post("http://localhost:8080/api/cart/add",productCart);
+    return this.service.post<IProductCart,IProductCart>("http://localhost:8080/api/cart/add",productCart);
   }
 
   updateProductToCart(productCart: IProductCart) {
-    return this.service.put("http://localhost:8080/api/cart/update",productCart);
+    return this.service.put<IProductCart,IProductCart>("http://localhost:8080/api/cart/update",productCart);
   }
 
   deleteProductToCart(productId: number) {
-    return this.service.delete("http://localhost:8080/api/cart/remove/"+productId);
+    return this.service.delete<IProductCart>("http://localhost:8080/api/cart/remove/"+productId);
   }
 
   clearCart() {
-    return this.service.delete("http://localhost:8080/api/cart/clear");
+    return this.service.delete<IProductCart>("http://localhost:8080/api/cart/clear");
   }
   
 }

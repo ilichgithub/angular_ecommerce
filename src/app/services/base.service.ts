@@ -14,7 +14,7 @@ import { catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class BaseService<T> { 
+export class BaseService { 
 
   // eslint-disable-next-line @angular-eslint/prefer-inject
   constructor(protected http: HttpClient) { }
@@ -45,7 +45,7 @@ export class BaseService<T> {
    * Obtiene todos los recursos.
    * @returns Un Observable de un array de entidades (T[]).
    */
-  get(apiUrl: string): Observable<T> {
+  get<T>(apiUrl: string): Observable<T> {
     return this.http.get<T>(apiUrl)
       .pipe(
         catchError(this.handleError)
@@ -56,7 +56,7 @@ export class BaseService<T> {
    * Obtiene todos los recursos.
    * @returns Un Observable de un array de entidades (T[]).
    */
-  getAll(apiUrl: string): Observable<T[]> {
+  getAll<T>(apiUrl: string): Observable<T[]> {
     return this.http.get<T[]>(apiUrl)
       .pipe(
         catchError(this.handleError)
@@ -66,11 +66,11 @@ export class BaseService<T> {
   /**
    * Crea un nuevo recurso.
    * @param item La entidad a crear.
-   * @returns Un Observable de la entidad creada (T).
+   * @returns Un Observable de la entidad creada (R).
    */
-  post(apiUrl: string, item: T): Observable<T> {
+  post<T,R>(apiUrl: string, item: T): Observable<R> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post<T>(apiUrl, item, { headers })
+    return this.http.post<R>(apiUrl, item, { headers })
       .pipe(
         catchError(this.handleError)
       );
@@ -82,9 +82,9 @@ export class BaseService<T> {
    * @param item La entidad con los datos actualizados.
    * @returns Un Observable de la entidad actualizada (T).
    */
-  put(apiUrl: string, item: T): Observable<T> {
+  put<T,R>(apiUrl: string, item: T): Observable<R> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.put<T>(apiUrl, item, { headers })
+    return this.http.put<R>(apiUrl, item, { headers })
       .pipe(
         catchError(this.handleError)
       );
@@ -95,7 +95,7 @@ export class BaseService<T> {
    * @param id El ID del recurso a eliminar.
    * @returns Un Observable de cualquier tipo (generalmente vacío o un mensaje de confirmación).
    */
-  delete(apiUrl: string): Observable<T> {
+  delete<T>(apiUrl: string): Observable<T> {
     return this.http.delete<T>(apiUrl)
       .pipe(
         catchError(this.handleError)

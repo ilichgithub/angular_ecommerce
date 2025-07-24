@@ -6,18 +6,18 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService extends BaseService<IProduct>  {
+export class ProductService extends BaseService  {
   
   constructor(
     // eslint-disable-next-line @angular-eslint/prefer-inject
     http: HttpClient,
     // eslint-disable-next-line @angular-eslint/prefer-inject
-    private service: BaseService<IProduct>) {
+    private service: BaseService) {
     super(http);
   }
   
   getProductAll() {
-    return this.service.getAll("http://localhost:8080/api/product/getAll");
+    return this.service.getAll<IProduct>("http://localhost:8080/api/product/getAll");
   }
   
 }
