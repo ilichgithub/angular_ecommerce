@@ -1,11 +1,15 @@
 {
   "APP_TITLE": "My Online Store",
-  "APP_DESCRIPTION": "Explore our wide selection of products.",
+  "APP_DESCRIPTION": "Explore our great selection of products.",
   "BUTTONS": {
-    "LOGIN": "Sign In",
+    "LOGIN": "Log In",
     "LOGOUT": "Log Out",
     "SEARCH": "Search",
-    "CREATE_ACCOUNT": "Create Account"
+    "CANCEL": "Cancel",
+    "CREATE_ACCOUNT": "Create Account",
+    "VIEW_DETAILS": "View Details",
+    "PAY": "Pay",
+    "MYCART": "My Cart"
   },
   "PLACEHOLDERS": {
     "SEARCH_PRODUCTS": "Search products...",
@@ -24,8 +28,9 @@
   },
   "LOGIN": {
     "NO_ACCOUNT_QUESTION": "Don't have an account?",
-    "ACCOUNT_QUESTION": "Do you have an account?",
-    "FORGOT_PASSWORD": "Forgot your password?"
+    "ACCOUNT_QUESTION": "Already have an account?",
+    "FORGOT_PASSWORD": "Forgot your password?",
+    "LOGIN_SUCCESS": "Login successful!"
   },
   "NAVBAR": {
     "HOME": "Home",
@@ -42,14 +47,34 @@
     "CHECKOUT": "Checkout",
     "EMPTY_MESSAGE": "Your cart is empty. Add some products!",
     "GO_TO_PRODUCTS": "Go to Products",
-    "LOAD_ERROR": "Could not load the cart. Please try again.",
+    "LOAD_ERROR": "Could not load cart. Please try again.",
     "UPDATE_QUANTITY_ERROR": "Could not update quantity.",
     "REMOVE_ITEM_ERROR": "Could not remove item from cart.",
-    "CLEAR_CART_ERROR": "Could not clear the cart.",
+    "CLEAR_CART_ERROR": "Could not clear cart.",
     "CONFIRM_REMOVE_ITEM": "Are you sure you want to remove this item?",
-    "CONFIRM_CLEAR_CART": "Are you sure you want to clear your entire cart?",
-    "CHECKOUT_SUCCESS": "Your purchase has been successfully completed!",
-    "EMPTY_CART_CHECKOUT_ERROR": "You cannot proceed to checkout with an empty cart."
+    "CONFIRM_CLEAR_CART": "Are you sure you want to clear the entire cart?",
+    "CHECKOUT_SUCCESS": "Your purchase has been completed successfully!",
+    "EMPTY_CART_CHECKOUT_ERROR": "You cannot checkout with an empty cart."
+  },
+  "ORDERS": {
+    "TITLE": "Your Orders",
+    "NO_ORDERS_MESSAGE": "You don't have any orders yet.",
+    "STATUS": {
+      "PENDING": "Pending",
+      "COMPLETED": "Completed",
+      "CANCELLED": "Cancelled",
+      "PAID": "Paid"
+    },
+    "ORDER_ID": "Order #",
+    "TOTAL_AMOUNT": "Total Amount:",
+    "DATE": "Date:",
+    "ITEMS": "Items:",
+    "ORDER_CANCELLED_SUCCESS": "Order {{orderId}} cancelled.",
+    "ORDER_VIEW_DETAILS_MESSAGE": "Viewing details for order {{orderId}}.",
+    "ORDER_PAYMENT_INITIATED": "Payment for order {{orderId}} initiated."
+  },
+  "COMMON": {
+    "DISMISS": "Dismiss"
   },
   "ERRORS": {
     "GENERIC_ERROR": "An unexpected error occurred.",

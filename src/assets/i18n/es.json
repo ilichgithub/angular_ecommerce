@@ -5,7 +5,11 @@
     "LOGIN": "Iniciar Sesión",
     "LOGOUT": "Cerrar Sesión",
     "SEARCH": "Buscar",
-    "CREATE_ACCOUNT": "Crear Cuenta"
+    "CANCEL": "Cancelar",
+    "CREATE_ACCOUNT": "Crear Cuenta",
+    "VIEW_DETAILS": "Ver Detalles",
+    "PAY": "Pagar",
+    "MYCART": "Mi Carrito"
   },
   "PLACEHOLDERS": {
     "SEARCH_PRODUCTS": "Buscar productos...",
@@ -25,7 +29,8 @@
   "LOGIN": {
     "NO_ACCOUNT_QUESTION": "¿No tienes una cuenta?",
     "ACCOUNT_QUESTION": "¿Tienes una cuenta?",
-    "FORGOT_PASSWORD": "¿Olvidaste tu contraseña?"
+    "FORGOT_PASSWORD": "¿Olvidaste tu contraseña?",
+    "LOGIN_SUCCESS": "¡Inicio de sesión exitoso!"
   },
   "NAVBAR": {
     "HOME": "Inicio",
@@ -50,6 +55,26 @@
     "CONFIRM_CLEAR_CART": "¿Estás seguro de que quieres vaciar todo el carrito?",
     "CHECKOUT_SUCCESS": "¡Tu compra se ha realizado con éxito!",
     "EMPTY_CART_CHECKOUT_ERROR": "No puedes finalizar la compra con un carrito vacío."
+  },
+  "ORDERS": {
+    "TITLE": "Tus Órdenes",
+    "NO_ORDERS_MESSAGE": "Aún no tienes órdenes.",
+    "STATUS": {
+      "PENDING": "Pendiente",
+      "COMPLETED": "Completada",
+      "CANCELLED": "Cancelada",
+      "PAID": "Pagada"
+    },
+    "ORDER_ID": "Orden #",
+    "TOTAL_AMOUNT": "Monto Total:",
+    "DATE": "Fecha:",
+    "ITEMS": "Artículos:",
+    "ORDER_CANCELLED_SUCCESS": "Orden {{orderId}} cancelada.",
+    "ORDER_VIEW_DETAILS_MESSAGE": "Viendo detalles para la orden {{orderId}}.",
+    "ORDER_PAYMENT_INITIATED": "Pago de la orden {{orderId}} iniciado."
+  },
+  "COMMON": {
+    "DISMISS": "Cerrar"
   },
   "ERRORS": {
     "GENERIC_ERROR": "Ha ocurrido un error inesperado.",

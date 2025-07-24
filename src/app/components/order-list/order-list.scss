@@ -1,0 +1,123 @@
+
+.order-list-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: var(--background-color); // Aplicar color de fondo general
+  color: var(--text-color); // Aplicar color de texto general
+
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--primary-color); // Título con color primario
+  }
+
+  .order-card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-background); // Fondo de la tarjeta
+    border: 1px solid var(--border-color); // Borde sutil
+
+    mat-card-header {
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-color); // Borde bajo el encabezado
+    }
+
+    mat-card-subtitle {
+      color: var(--text-color); // Color para el texto de subtítulo
+      .status-pending {
+        color: orange; // Mantener naranja para pendiente si es deseado
+        font-weight: bold;
+      }
+      .status-completed, .status-paid {
+        color: green; // Mantener verde para completado/pagado
+        font-weight: bold;
+      }
+      .status-cancelled {
+        color: red; // Mantener rojo para cancelado
+        font-weight: bold;
+      }
+    }
+
+    .order-items {
+      margin-top: 15px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border-color); // Borde superior para items
+
+      h4 {
+        margin-bottom: 5px;
+        color: var(--text-color); // Color para el título de items
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          padding: 5px 0;
+          border-bottom: 1px dotted #f0f0f0; // Un color más suave
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+
+    mat-card-actions {
+      padding-top: 15px;
+      display: flex;
+      gap: 10px;
+
+      button {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        // Estilos específicos para los botones de Material si no los tienes globales
+        &[mat-flat-button][color="primary"] {
+          background-color: var(--primary-color);
+          color: var(--card-background); // Texto blanco sobre morado
+          &:hover {
+            background-color: var(--hover-color);
+          }
+        }
+        &[mat-flat-button][color="accent"] {
+          background-color: var(--secondary-color); // Botón de pagar con el morado vibrante
+          color: var(--card-background);
+          &:hover {
+            background-color: var(--hover-color); // Usar el mismo hover para consistencia
+          }
+        }
+        // Para el botón de "warn" (Cancelar) generalmente se usa rojo, pero puedes cambiarlo
+        &[mat-flat-button][color="warn"] {
+          // background-color: red; // Mantiene el rojo predeterminado para 'warn'
+          // color: white;
+          // &:hover {
+          //   background-color: darkred;
+          // }
+          // O puedes usar un tono de tus colores:
+           background-color: #D32F2F; // Un rojo estándar de Material
+           color: white;
+           &:hover {
+             background-color: #B71C1C;
+           }
+        }
+
+        &:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+
+  .no-orders-card {
+    text-align: center;
+    padding: 30px;
+    color: var(--placeholder-color); // Texto más suave
+    font-style: italic;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+  }
+}

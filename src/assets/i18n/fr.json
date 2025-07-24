@@ -1,11 +1,15 @@
 {
   "APP_TITLE": "Ma Boutique en Ligne",
-  "APP_DESCRIPTION": "Découvrez notre vaste sélection de produits.",
+  "APP_DESCRIPTION": "Découvrez notre grande sélection de produits.",
   "BUTTONS": {
-    "LOGIN": "Se Connecter",
-    "LOGOUT": "Se Déconnecter",
+    "LOGIN": "Se connecter",
+    "LOGOUT": "Se déconnecter",
     "SEARCH": "Rechercher",
-    "CREATE_ACCOUNT": "Créer un Compte"
+    "CANCEL": "Annuler",
+    "CREATE_ACCOUNT": "Créer un compte",
+    "VIEW_DETAILS": "Voir les détails",
+    "PAY": "Payer",
+    "MYCART": "Mon Panier"
   },
   "PLACEHOLDERS": {
     "SEARCH_PRODUCTS": "Rechercher des produits...",
@@ -15,22 +19,23 @@
   "GREETING": "Bonjour, {{name}} !",
   "WELCOME": "Bienvenue",
   "PRODUCT_CARD": {
-    "OUT_OF_STOCK": "RUPTURE DE STOCK",
+    "OUT_OF_STOCK": "EN RUPTURE DE STOCK",
     "CATEGORY": "Catégorie",
-    "IN_STOCK": "En Stock",
-    "VIEW_DETAILS": "Voir les Détails",
-    "ADD_TO_CART": "Ajouter au Panier",
+    "IN_STOCK": "En stock",
+    "VIEW_DETAILS": "Voir les détails",
+    "ADD_TO_CART": "Ajouter au panier",
     "QUANTITY": "Quantité"
   },
   "LOGIN": {
     "NO_ACCOUNT_QUESTION": "Vous n'avez pas de compte ?",
-    "ACCOUNT_QUESTION": "as-tu un compte ?",
-    "FORGOT_PASSWORD": "Mot de passe oublié?"
+    "ACCOUNT_QUESTION": "Vous avez déjà un compte ?",
+    "FORGOT_PASSWORD": "Mot de passe oublié ?",
+    "LOGIN_SUCCESS": "Connexion réussie !"
   },
   "NAVBAR": {
     "HOME": "Accueil",
     "PRODUCTS": "Produits",
-    "ABOUT": "À Propos",
+    "ABOUT": "À propos de nous",
     "CONTACT": "Contact",
     "CART": "Panier"
   },
@@ -38,18 +43,38 @@
     "TITLE": "Votre Panier",
     "TOTAL": "Total",
     "REMOVE": "Supprimer",
-    "CLEAR_CART": "Vider le Panier",
+    "CLEAR_CART": "Vider le panier",
     "CHECKOUT": "Commander",
     "EMPTY_MESSAGE": "Votre panier est vide. Ajoutez des produits !",
-    "GO_TO_PRODUCTS": "Aller aux Produits",
+    "GO_TO_PRODUCTS": "Aller aux produits",
     "LOAD_ERROR": "Impossible de charger le panier. Veuillez réessayer.",
     "UPDATE_QUANTITY_ERROR": "Impossible de mettre à jour la quantité.",
     "REMOVE_ITEM_ERROR": "Impossible de supprimer l'article du panier.",
     "CLEAR_CART_ERROR": "Impossible de vider le panier.",
     "CONFIRM_REMOVE_ITEM": "Êtes-vous sûr de vouloir supprimer cet article ?",
-    "CONFIRM_CLEAR_CART": "Êtes-vous sûr de vouloir vider tout votre panier ?",
+    "CONFIRM_CLEAR_CART": "Êtes-vous sûr de vouloir vider tout le panier ?",
     "CHECKOUT_SUCCESS": "Votre achat a été effectué avec succès !",
-    "EMPTY_CART_CHECKOUT_ERROR": "Vous ne pouvez pas passer à la caisse avec un panier vide."
+    "EMPTY_CART_CHECKOUT_ERROR": "Vous ne pouvez pas passer commande avec un panier vide."
+  },
+  "ORDERS": {
+    "TITLE": "Vos commandes",
+    "NO_ORDERS_MESSAGE": "Vous n'avez pas encore de commandes.",
+    "STATUS": {
+      "PENDING": "En attente",
+      "COMPLETED": "Terminée",
+      "CANCELLED": "Annulée",
+      "PAID": "Payée"
+    },
+    "ORDER_ID": "Commande n°",
+    "TOTAL_AMOUNT": "Montant total :",
+    "DATE": "Date :",
+    "ITEMS": "Articles :",
+    "ORDER_CANCELLED_SUCCESS": "Commande {{orderId}} annulée.",
+    "ORDER_VIEW_DETAILS_MESSAGE": "Affichage des détails de la commande {{orderId}}.",
+    "ORDER_PAYMENT_INITIATED": "Paiement de la commande {{orderId}} initié."
+  },
+  "COMMON": {
+    "DISMISS": "Fermer"
   },
   "ERRORS": {
     "GENERIC_ERROR": "Une erreur inattendue est survenue.",
