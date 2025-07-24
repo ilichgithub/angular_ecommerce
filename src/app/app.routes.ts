@@ -4,6 +4,7 @@ import { DashboardComponent } from './components/dashboard/dashboard';
 import { authGuard } from './guards/auth-guard';
 import { LayoutComponent } from './components/layout/layout';
 import { CartListComponent } from './components/cart-list/cart-list';
+import { OrdersPageComponent } from './components/order-page/order-page';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -20,6 +21,10 @@ export const routes: Routes = [
       {
         path: 'cart', 
         component: CartListComponent 
+      }, 
+      {
+        path: 'orders', 
+        component: OrdersPageComponent 
       }, 
     ]
   },

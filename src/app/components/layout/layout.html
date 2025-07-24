@@ -13,13 +13,13 @@
     </a>
     <ul class="navbar__links" [class.is-open]="isMenuOpen">
       <li class="navbar__item">
-        <a routerLink="/home" routerLinkActive="active" class="navbar__link" (click)="closeMenu()">Inicio</a>
+        <a routerLinkActive="active" class="navbar__link" (click)="goTo('cart')">{{ 'BUTTONS.MYCART' | translate }}</a>
       </li>
       <li class="navbar__item">
-        <a routerLink="/productos" routerLinkActive="active" class="navbar__link" (click)="closeMenu()">Productos</a>
+        <a routerLinkActive="active" class="navbar__link" (click)="goTo('dashboard')">Productos</a>
       </li>
       <li class="navbar__item">
-        <a routerLink="/servicios" routerLinkActive="active" class="navbar__link" (click)="closeMenu()">Servicios</a>
+        <a routerLinkActive="active" class="navbar__link" (click)="goTo('orders')">Orders</a>
       </li>
       <li class="navbar__item">
         <a routerLink="/contacto" routerLinkActive="active" class="navbar__link" (click)="closeMenu()">Contacto</a>

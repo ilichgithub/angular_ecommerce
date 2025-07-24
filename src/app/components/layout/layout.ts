@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterModule, RouterOutlet } from '@angular/router'; // Necesario para routerLink, routerLinkActive
+import { Router, RouterLink, RouterModule, RouterOutlet } from '@angular/router'; // Necesario para routerLink, routerLinkActive
 import * as AuthActions from '../../state/auth/auth.actions';
 import { Store } from '@ngrx/store';
 import { TranslateModule } from '@ngx-translate/core';
@@ -26,6 +26,8 @@ export class LayoutComponent {
   constructor(
     // eslint-disable-next-line @angular-eslint/prefer-inject
     private store: Store,
+    // eslint-disable-next-line @angular-eslint/prefer-inject
+    public router: Router,
   ) {
       this.store.dispatch(getByUser());
       this.store
@@ -35,6 +37,10 @@ export class LayoutComponent {
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen; // Cambia el estado del menú
+  }
+  
+  goTo(path: string){
+    this.router.navigate([path]);
   }
 
   closeMenu(): void {

@@ -110,6 +110,7 @@ $breakpoint-tablet: 1000px; // Para pantallas pequeñas/medianas
   &__item {
     margin: 0 1rem;
     align-content: center;
+    cursor: pointer;
 
     @media (max-width: $breakpoint-tablet) {
       margin: 0.5rem 0;

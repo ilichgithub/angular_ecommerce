@@ -3,10 +3,11 @@ import { CommonModule, CurrencyPipe } from '@angular/common'; // CurrencyPipe pa
 import { FormsModule } from '@angular/forms'; // Para [(ngModel)]
 import { TranslateModule, TranslateService } from '@ngx-translate/core'; // Para el pipe de traducción
 import { RouterModule } from '@angular/router'; // Para navegación y routerLink
-import { ICart, IProductCart } from '../../interfaces/cart/cart.interface';
+import { ICart, INITIAL_IORDERRESPONSE, IProductCart } from '../../interfaces/cart/cart.interface';
 import { Store } from '@ngrx/store';
 import { selectCart } from '../../state/cart/cart.selectors';
 import { clearCart, deleteProductToCart, updateProductToCart } from '../../state/cart/cart.actions';
+import { placeOrder } from '../../state/order/order.actions';
 
 @Component({
   selector: 'app-cart-list',
@@ -90,7 +91,7 @@ export class CartListComponent {
    */
   checkout(): void {
     if (this.cart && this.cart.items.length > 0) {
-      console.log('Iniciando proceso de checkout para el carrito:', this.cart);
+      this.store.dispatch(placeOrder({ order: INITIAL_IORDERRESPONSE }));
     } else {
       alert(this.translate.instant('CART.EMPTY_CART_CHECKOUT_ERROR'));
     }

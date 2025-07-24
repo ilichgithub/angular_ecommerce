@@ -16,7 +16,7 @@ export class ProductEffects {
     public router: Router,
   ) {}
 
-  login$ = createEffect(() =>
+  getAll$ = createEffect(() =>
     this.actions$.pipe(
       ofType(ProductActions.getAll),
       mergeMap(() =>

@@ -1,0 +1,7 @@
+
+    <app-order-list 
+      [orders]="orders"
+      (cancelOrder)="handleCancelOrder($event)"
+      (viewDetails)="handleViewDetails($event)"
+      (payOrder)="handlePayOrder($event)">
+    </app-order-list>
